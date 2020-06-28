@@ -3,32 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
-    <title>Animation</title>
+    <title>JS Animation</title>
 </head>
 <body>
 
     <!-- IMAGE EXPAND MODAL -->
-    <h1>Image Expand Modal</h1>
-    <div class="gallery">
-        <div class="img-container">
-            <img src="./small/nature-small.jpg" alt="Photo of nature" data-original="nature-large.jpg">
+    <section class="expand-modal text-center">
+        <h1>Image Expand Modal</h1>
+        <div class="gallery">
+            <div class="img-container">
+                <img src="./img/small/nature-small.jpg" alt="Photo of nature" data-original="nature-large.jpg">
+            </div>
+            <div class="img-container">
+                <img src="./img/small/night-sky-small.jpg" alt="Photo of night sky" data-original="night-sky-large.jpg">
+            </div>
+            <div class="img-container">
+                <img src="./img/small/sunset-small.jpg" alt="Photo of sunset" data-original="sunset-large.jpg">
+            </div>
+            <div class="img-container">
+                <img src="./img/small/ocean-small.jpg" alt="Photo of ocean" data-original="ocean-large.jpg">
+            </div>
         </div>
-        <div class="img-container">
-            <img src="./small/night-sky-small.jpg" alt="Photo of night sky" data-original="night-sky-large.jpg">
+    
+        <div class="modal">
+            <img src="./img/large/nature-large.jpg" class="full-img">
+            <p class="caption">This is modal</p>
         </div>
-        <div class="img-container">
-            <img src="./small/sunset-small.jpg" alt="Photo of sunset" data-original="sunset-large.jpg">
-        </div>
-        <div class="img-container">
-            <img src="./small/ocean-small.jpg" alt="Photo of ocean" data-original="ocean-large.jpg">
-        </div>
-    </div>
+    </section>
 
-    <div class="modal">
-        <img src="large/nature-large.jpg" class="full-img">
-        <p class="caption">This is modal</p>
-    </div>
+    <!-- MOUSE CURSOR -->
+    <div class="cursor"></div>
+    <nav>
+        <h1>Cursor</h1>
+        <ul class="nav-links">
+            <li>Home</li>
+            <li>Contact</li>
+            <li>Service</li>
+        </ul>
+    </nav>
+    <section class="cursor-container">
+        <div class="front-cover">
+            <img src="./img/city.jpg" alt="">
+        </div>
+        <div class="front-description">
+            <h2>New York City</h2>
+        </div>
+    </section>
     
     <script src="./app.js"></script>
 </body>
