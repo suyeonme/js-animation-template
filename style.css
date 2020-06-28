@@ -6,7 +6,12 @@
     box-sizing: border-box;
 }
 
-/********* IMAGE EXPAND MODAL *********/
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/****************************
+**** IMAGE EXPAND MODAL ****/
 /* Gallery */
 .gallery {
     display: grid;
@@ -71,9 +76,9 @@
     transform: translate(-50%, -5%);
 }
 
-/********* MOUSE CURSOR **********/
-body {
-    font-family: 'Poppins', sans-serif;
+/****************************
+******* MOUSE CURSOR  *******/
+.mouse-cursor {
     cursor: none;
 }
 
@@ -102,21 +107,20 @@ h1 {
 .cursor-container {
     width: 100%;
     height: 100vh;
-
     display: flex;
     align-items: center;
 }
 
 .cursor {
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
     border: 2px solid black;
     border-radius: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
     pointer-events: none;
     z-index: -1;
-    backdrop-filter: grayscale();                           /* It apply elements behind cursor  */
+    backdrop-filter: grayscale();  /* It apply elements behind cursor  */
 
     transition: all .3s ease;
     transition-property: background, transform;
@@ -142,8 +146,35 @@ h1 {
 }
 
 
+/****************************
+******* FANCY TEXT  *******/
+.text-fancy {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    text-align: center;
 
+    display: flex;
+    align-items: center;
+}
 
+.text-fancy h1 {
+    color: white;
+    font-size: 5rem;
+}
+
+span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all .5s ease;
+}
+span.fade {
+    opacity: 1;
+    transform: translateY(0);
+
+    /* color: rgb(214, 39, 147); */
+}
 
 
 

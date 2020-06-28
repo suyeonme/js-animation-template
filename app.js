@@ -62,3 +62,37 @@ const mouseCursor = (function(){
     });
 })();
 
+
+/////////////////////////////
+// FANCY TEXT
+const fancyText = (function() {
+    const text = document.querySelector('.fancy');
+    const strText = text.textContent;
+    const splitText = strText.split("");
+    text.textContent = "";
+
+    // Add span to each character
+    for (let i = 0; i < splitText.length; i ++) {
+        text.innerHTML += `<span> ${splitText[i]}</span>`;
+    }
+
+    const onTick = () => {
+        const span = document.querySelectorAll('span')[character];
+        span.classList.add('fade');
+        character++;
+
+        if (character === splitText.length) {
+            complete();
+            return;
+        };
+    };
+
+    let character = 0;
+    let timer = setInterval(onTick, 50);
+
+    const complete = () => {
+        clearInterval(timer);
+        timer = null;
+    };
+})();
+
