@@ -9,8 +9,8 @@
 </head>
 <body>
 
-    <!-- IMAGE EXPAND MODAL -->
-    <section class="expand-modal text-center">
+    <!-- IMAGE EXPAND MODAL
+    <section class="expand-modal text-center section">
         <h1>Image Expand Modal</h1>
         <div class="gallery">
             <div class="img-container">
@@ -32,11 +32,12 @@
             <p class="caption">This is modal</p>
         </div>
     </section>
+    -->
 
-    <!-- MOUSE CURSOR -->
-    <section class="mouse-cursor">
+    <!-- MOUSE CURSOR 
+    <section class="mouse-cursor section">
         <div class="cursor"></div>
-        <nav>
+        <nav class="nav-cursor">
             <h1>Cursor</h1>
             <ul class="nav-links">
                 <li>Home</li>
@@ -54,10 +55,39 @@
             </div>
         </div>
     </section>
+    -->
 
-    <!-- MOUSE CURSOR -->
-    <section class="text-fancy">
-        <h1 class="fancy">Fancy Developer</h1>
+    <!-- FADEIN TEXT 
+    <section class="text-fade">
+        <h1 class="text">Fancy Developer</h1>
+    </section>
+    -->
+
+    <!-- COLORBOX NAV -->
+    <section class="nav-colorBox">
+        <header class="nav-header">
+            <nav class="navbar">
+                <h1>Color Box</h1>
+                <ul>
+                    <li><a data-page="home" href="#">Home</a></li>
+                    <li><a data-page="project" href="#">Project</a></li>
+                    <li><a data-page="contact" href="#">Contact</a></li>
+                    <div class="colorBox"></div>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section data-index="0" class="home">
+                <h2>HOME</h2>
+            </section>
+            <section data-index="1" class="project">
+                <h2>PROJECT</h2>
+            </section>
+            <section data-index="2" class="contact">
+                <h2>CONTACT</h2>
+            </section>
+        </main>
     </section>
     
     <script src="./app.js"></script>

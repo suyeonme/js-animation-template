@@ -2,7 +2,7 @@
 
 /////////////////////////////
 // IMAGE EXPAND MODAL
-const imageModal = (function() {
+/* const imageModal = (function() {
     const modal = document.querySelector('.modal');
     const previews = Array.from(document.querySelectorAll('.img-container img'));
     const modalImage = document.querySelector('.full-img');
@@ -33,12 +33,12 @@ const imageModal = (function() {
             };
         });
     }
-})();
+})(); */
 
 
 /////////////////////////////
 // MOUSE CURSOR 
-const mouseCursor = (function(){
+/* const mouseCursor = (function(){
     const mouseCursor = document.querySelector('.cursor');
     const navLinks = document.querySelectorAll('.nav-links li');
 
@@ -60,27 +60,28 @@ const mouseCursor = (function(){
             link.classList.add('hovered-link');
         });
     });
-})();
+})(); */
 
 
 /////////////////////////////
 // FANCY TEXT
-const fancyText = (function() {
-    const text = document.querySelector('.fancy');
-    const strText = text.textContent;
-    const splitText = strText.split("");
+/* const fancyText = (function() {
+    const text = document.querySelector('.text');
+    const splitText = text.textContent.split("");
     text.textContent = "";
 
     // Add span to each character
     for (let i = 0; i < splitText.length; i ++) {
-        text.innerHTML += `<span> ${splitText[i]}</span>`;
-    }
+        text.innerHTML += `<span>${splitText[i]}</span>`;
+    };
 
+    // Give an animation
     const onTick = () => {
         const span = document.querySelectorAll('span')[character];
-        span.classList.add('fade');
+        span.classList.add('fade-in');
         character++;
 
+        // Finish animation
         if (character === splitText.length) {
             complete();
             return;
@@ -94,5 +95,53 @@ const fancyText = (function() {
         clearInterval(timer);
         timer = null;
     };
+})(); */
+
+/////////////////////////////
+// NAV COLOR BOX 
+const navColorBox = (function(){
+    const sections = document.querySelectorAll('.nav-colorBox section');
+    const colorBox = document.querySelector('.colorBox');
+    const gradients = [
+        'linear-gradient(to right top, #f46b45, #eea849)',
+        'linear-gradient(to right top, #005c97, #363795)',
+        'linear-gradient(to right top, #e53935, #e35d5b)'
+    ];
+
+    const options = {
+        threshold: 0.7                      // 70%
+    };
+
+    const navCheck = entries => {
+        entries.forEach(entry => {
+            const className = entry.target.className;
+            const activeAnchor = document.querySelector(`[data-page=${className}]`);
+            const gradientIndex = entry.target.getAttribute('data-index');
+
+            const coords = activeAnchor.getBoundingClientRect();
+            const directions = {
+                height: coords.height,
+                width: coords.width,
+                top: coords.top,
+                left: coords.left
+            };
+
+            if (entry.isIntersecting) {
+                colorBox.style.setProperty('left', `${directions.left}px`);
+                colorBox.style.setProperty('top', `${directions.top}px`);
+                colorBox.style.setProperty('width', `${directions.width}px`);
+                colorBox.style.setProperty('height', `${directions.height}px`);
+                colorBox.style.background = gradients[gradientIndex]; 
+            };
+        });
+    };
+
+    const observer = new IntersectionObserver(navCheck, options);
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+
 })();
+
 
