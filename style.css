@@ -246,13 +246,19 @@ nav a {
 
 /**********************************
 ****** FADE IN HEADER IMAGE ******/
+/* .fadein {
+    max-width: 100vw;
+    overflow-x: hidden;
+    background-color: black;
+}
+
 body {
     background-color: black;
 }
 
 header {
     position: relative;
-    width: 100%;
+    max-width: 100%;
     height: 100vh;
     overflow: hidden;
 }
@@ -270,16 +276,66 @@ header {
     height: 100%;
 }
 
-section {
+.fade-section {
     color: white;
     padding: 7rem;
     text-align: center;
 }
 
-section h2 {
+.fade-section h2 {
     margin-bottom: 2rem;
     font-size: 3rem;
+} */
+
+
+
+/**********************************
+****** IMAGE GALLERY  ******/
+.gallery-section {
+    width: 100%;
+    height: 80vh;
+
+    display: flex;    
+    align-items: center;
+    flex-flow: row nowrap;
+    overflow-x: auto;
+    overflow-y: visible;
+
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;     /* Firefox */
 }
+.gallery-section::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.img-container {
+    padding: 0 1rem;
+    cursor: grab;
+}
+
+.img-container--h {
+    width: 20rem;
+    height: 25rem;
+}
+
+.img-container--v {
+    width: 23rem;
+    height: 18rem;
+}
+
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+}
+
+
 
 
 
