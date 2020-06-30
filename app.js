@@ -97,9 +97,10 @@
     };
 })(); */
 
+
 /////////////////////////////
 // NAV COLOR BOX 
-const navColorBox = (function(){
+/* const navColorBox = (function(){
     const sections = document.querySelectorAll('.nav-colorBox section');
     const colorBox = document.querySelector('.colorBox');
     const gradients = [
@@ -109,15 +110,17 @@ const navColorBox = (function(){
     ];
 
     const options = {
-        threshold: 0.7                      // 70%
+        threshold: 0.7  // 70%
     };
 
     const navCheck = entries => {
         entries.forEach(entry => {
-            const className = entry.target.className;
+            // Match current section and nav
+            const className = entry.target.className;    
             const activeAnchor = document.querySelector(`[data-page=${className}]`);
             const gradientIndex = entry.target.getAttribute('data-index');
 
+            // Set intersection rectangle of nav
             const coords = activeAnchor.getBoundingClientRect();
             const directions = {
                 height: coords.height,
@@ -126,6 +129,7 @@ const navColorBox = (function(){
                 left: coords.left
             };
 
+            // Animate
             if (entry.isIntersecting) {
                 colorBox.style.setProperty('left', `${directions.left}px`);
                 colorBox.style.setProperty('top', `${directions.top}px`);
@@ -136,12 +140,28 @@ const navColorBox = (function(){
         });
     };
 
+    // Createing intersection observer
     const observer = new IntersectionObserver(navCheck, options);
 
+    // Targeting an element to be observed (section)
     sections.forEach(section => {
-        observer.observe(section);
+        observer.observe(section); 
     });
 
-})();
+})(); */
+
+
+/////////////////////////////
+// FADE IN HEADER IMAGE
+const fadeInHeader = (function() {
+    const bgImage = document.querySelector('.bg');
+    
+    window.addEventListener('scroll', () => {
+        bgImage.style.opacity = 1 - +window.pageYOffset/550+'';
+        bgImage.style.top = +window.pageYOffset+'px';
+        bgImage.style.backgroundPositionY = - +window.pageYOffset/2+'px';
+    });
+
+})(); 
 
 

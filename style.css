@@ -13,7 +13,7 @@ body {
 /****************************
 **** IMAGE EXPAND MODAL ****/
 /* Gallery */
-.gallery {
+/* .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 1.5rem;
@@ -35,10 +35,10 @@ body {
 
 .img-container img:hover {
     transform: scale(1.2);
-}
+} */
 
 /* Modal */
-.modal {
+/* .modal {
     background-color: rgba(0, 0, 0, .8);
     position: fixed;
     top: 0;
@@ -75,10 +75,13 @@ body {
     bottom: 5%;
     transform: translate(-50%, -5%);
 }
+ */
+
+
 
 /****************************
 ******* MOUSE CURSOR  *******/
-.mouse-cursor {
+/* .mouse-cursor {
     cursor: none;
 }
 
@@ -120,7 +123,7 @@ h1 {
     transform: translate(-50%, -50%);
     pointer-events: none;
     z-index: -1;
-    backdrop-filter: grayscale();  /* It apply elements behind cursor  */
+    backdrop-filter: grayscale();  
 
     transition: all .3s ease;
     transition-property: background, transform;
@@ -134,21 +137,21 @@ h1 {
 }
 .front-cover img {
     width: 100%;
-}
+} */
 
 /* cursor hover on link */
-.link-grow {
+/* .link-grow {
     transform: scale(1.5);
     background-color: black;
 }
 .hovered-link {
     color: white;
-}
+} */
 
 
 /****************************
 ******* FANCY TEXT  *******/
-.text-fade {
+/* .text-fade {
     width: 100%;
     height: 100vh;
     background-color: black;
@@ -171,20 +174,20 @@ span {
 span.fade-in {
     opacity: 1;
     transform: translateY(0);
+} */
 
-    /* color: rgb(214, 39, 147); */
-}
+
 
 /****************************
 ****** NAV ANIMATION ******/
-.nav-header {
+/* header {
     box-shadow: 0 3px 10px rgba(0, 0, 0, .3);
     position: sticky;
     top: 0;
     background: white;
 }
 
-.navbar {
+nav {
     min-height: 10vh;
     margin: 0 auto;
     width: 90%;
@@ -193,19 +196,19 @@ span.fade-in {
     justify-content: space-between;
 }
 
-.navbar h1,
-.navbar ul {
+nav h1,
+nav ul {
     font-size: 1.5rem;
     flex: 1;
 }
 
-.navbar ul {
+nav ul {
     list-style: none;
     display: flex;
     justify-content: space-between;
 }
 
-.navbar a {
+nav a {
     color: black;
     text-decoration: none;
 }
@@ -238,10 +241,47 @@ span.fade-in {
 }
 .contact {
     background: linear-gradient(to right top, #e53935, #e35d5b);
+} */
+
+
+/**********************************
+****** FADE IN HEADER IMAGE ******/
+body {
+    background-color: black;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.bg img {
+    width: 100%;
+    height: 100%;
+}
+
+section {
+    color: white;
+    padding: 7rem;
+    text-align: center;
+}
+
+section h2 {
+    margin-bottom: 2rem;
+    font-size: 3rem;
 }
 
 
 
 /* Helper class */
-.section { margin: 5rem 0; }
 .text-center { text-align: center; }
