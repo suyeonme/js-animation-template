@@ -143,25 +143,74 @@
     // Createing intersection observer
     const observer = new IntersectionObserver(navCheck, options);
 
-    // Targeting an element to be observed (section)
+    // Targeting an element to be observed
     sections.forEach(section => {
         observer.observe(section); 
     });
-
 })(); */
 
 
 /////////////////////////////
 // FADE IN HEADER IMAGE
-const fadeInHeader = (function() {
+/* const fadeInHeader = (function() {
     const bgImage = document.querySelector('.bg');
-    
+
     window.addEventListener('scroll', () => {
         bgImage.style.opacity = 1 - +window.pageYOffset/550+'';
         bgImage.style.top = +window.pageYOffset+'px';
         bgImage.style.backgroundPositionY = - +window.pageYOffset/2+'px';
     });
+})();  */
 
-})(); 
+
+/////////////////////////////
+// AIRPOD VIDEO ANIMATION
+const airpodVideo = (function() {
+    const intro = document.querySelector('.intro');
+    const video = document.querySelector('video');
+    const text = document.querySelector('h1');
+
+    const section = document.querySelector('section');
+    // const sectionText = document.querySelector('section h1');
+    
+    // Scroll Magic
+    const controller = new ScrollMagic.Controller();
+
+    // Scenes of Video
+    const scene = new ScrollMagic.Scene({
+        duration: 6000,                                     // Video duration is 6s, 
+        triggerElement: intro,
+        triggerHook: 0                                      // Position to start or end ab animation
+    })
+    .addIndicators()
+    .setPin(intro)
+    .addTo(controller);
+
+    // Video Animation
+    let accelAmount = 0.1;                                // Speed of frame
+    let scrollPosition = 0;
+    let delay = 0;
+
+    scene.on('update', e => {                               // On scroll (Event listener)
+        scrollPosition = e.scrollPos / 1000;                // It became 6s by diving 1000. not 6 ms.
+    });
+
+    setInterval(() => {
+        delay += (scrollPosition - delay) * accelAmount;
+        //console.log(scrollPosition, delay);
+        video.currentTime = delay;
+    }, 33.3);
 
 
+    // Scenes of text
+    const textAnimation = TweenMax.fromTo(text, 3, {opacity: 1}, {opacity: 0});
+
+    let secondScene = new ScrollMagic.Scene({
+        duration: 3000,
+        triggerElement: intro,
+        triggerHook: 0
+    })
+    .setTween(textAnimation)
+    .addTo(controller);
+
+})();

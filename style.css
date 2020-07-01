@@ -290,8 +290,8 @@ header {
 
 
 /**********************************
-****** IMAGE GALLERY  ******/
-.gallery-section {
+********* IMAGE GALLERY  *********/
+/* .gallery-section {
     width: 100%;
     height: 80vh;
 
@@ -299,16 +299,20 @@ header {
     align-items: center;
     flex-flow: row nowrap;
     overflow-x: auto;
-    overflow-y: visible;
+    overflow-y: visible; */
 
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    scrollbar-width: none;     /* Firefox */
+    /* -ms-overflow-style: none;   Internet Explorer 10+ */
+    /* scrollbar-width: none;      Firefox 
 }
+*/
+
+/*
 .gallery-section::-webkit-scrollbar { 
-    display: none;  /* Safari and Chrome */
+    display: none;   Safari and Chrome 
 }
+*/
 
-.container {
+/* .container {
     display: flex;
     align-items: center;
     padding: 0 1rem;
@@ -333,8 +337,41 @@ header {
 .img-container img {
     width: 100%;
     height: 100%;
+} */
+
+
+/**********************************
+****** AIRPOD VIDEO ANIMATION ******/
+.intro {
+    height: 100vh;
+    width: 100%;
 }
 
+.intro video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.intro h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: white;
+}
+
+section {
+    height: 100vh;
+    color: black;
+}
+
+section h1 {
+    text-align: center;
+    padding-top: 350px;
+    font-size: 3rem;
+}
 
 
 
