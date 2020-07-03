@@ -377,7 +377,7 @@ section h1 {
 
 /**********************************
 ****** FULL PAGE ANIMATION  ******/
-.chair {
+/* .chair {
     height: 60%;
     position: absolute;
     top: 70%;
@@ -418,6 +418,74 @@ section h1 {
 }
 .description p {
     margin: 50px 0;
+} */
+
+
+/***************************************
+****** PAGE ANIMATION WITH GSAP  ******/
+nav {
+    display: grid;
+    grid-template-columns: 10% 1fr 1fr 10%;
+    align-items: center;
+    min-height: 10vh;
+    color: white;
+}
+nav h3 {
+    grid-column: 2/3;
+    font-size: 1.3rem;
+}
+svg {
+    justify-self: end;
+    fill: white;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.slider {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: linear-gradient(to left, #ba7453, #d1a984);
+}
+
+section {
+    display: flex;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 60%;
+}
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.hero h1 {
+    position: absolute;
+    top: 70%;
+    left: 10%;
+    transform: translate(-15%, -70%); /* Prevet to overflow === WHY */
+    z-index:3 ;
+    font-size: 3.5rem;
+    color: white;
+}
+.hero::after {                      /* Tone Down */
+    content: "";
+    background: black;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .3;
 }
 
 
