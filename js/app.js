@@ -247,8 +247,8 @@
 
 
 /////////////////////////////
-// PAGE ANIMATION WITH GSAP
-const pageAnimation = (function(){
+// PAGE ANIMATION WITH GSAP 1
+/* const pageAnimation = (function(){
     const hero = document.querySelector('.hero');
     const slider = document.querySelector('.slider');
     const logo = document.querySelector('#logo');
@@ -263,4 +263,30 @@ const pageAnimation = (function(){
         .fromTo(logo, 0.5, { opacity: '0', x: '30' }, { opacity: '1', x: '0', ease: Power2.easeInOut }, "-=0.5")    
         .fromTo(menu, 0.5, { opacity: '0', x: '30' }, { opacity: '1', x: '0', ease: Power2.easeInOut }, "-=0.5")  
         .fromTo(headline, 0.5, { opacity: '0', x: '30' }, { opacity: '1', x: '0', ease: Power2.easeInOut }, "-=0.5")     
+})(); */
+
+
+///////////////////////////////////////////
+// PAGE ANIMATION WITH GSAP 2
+const navAnimation = (function() {
+    const navBtn = document.querySelector('.nav-btn');
+    const cover = document.querySelector('.cover');
+    const nav = document.querySelector('nav');
+    const navOpen = document.querySelector('.nav-open');
+    const timeline = new TimelineMax( { paused: true, reversed: true });
+
+    // Animate 
+    timeline
+        .to(cover, 1, { width: '60%', ease: Power2.easeOut })
+        .to(nav, 1, { height: '100%', ease: Power2.easeOut }, '-= 0.5')
+        .fromTo(navOpen, 0.5, { opacity: 0, x: '50', ease: Power2.easeOut }, { opacity: 1, x: '0', onComplete: function() { navOpen.style.pointerEvents = 'auto'} } ) // onComplete: it runs after finish animation
+
+    // Prevent animation when animation is active
+    navBtn.addEventListener('click', e => {
+        if (!timeline.isActive()) toggleTween(timeline);
+    });
+
+    const toggleTween = tween => {
+        tween.reversed() ? tween.play() : tween.reverse();
+    };
 })();

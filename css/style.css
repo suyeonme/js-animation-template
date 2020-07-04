@@ -422,8 +422,8 @@ section h1 {
 
 
 /***************************************
-****** PAGE ANIMATION WITH GSAP  ******/
-nav {
+****** PAGE ANIMATION WITH GSAP 1 ******/
+/* nav {
     display: grid;
     grid-template-columns: 10% 1fr 1fr 10%;
     align-items: center;
@@ -452,8 +452,8 @@ svg {
 }
 
 section {
-    display: flex;
     height: 80vh;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -472,12 +472,12 @@ section {
     position: absolute;
     top: 70%;
     left: 10%;
-    transform: translate(-15%, -70%); /* Prevet to overflow === WHY */
-    z-index:3 ;
+    transform: translate(-15%, -70%); // prevent absolute position to overflow
+    z-index:3;
     font-size: 3.5rem;
     color: white;
 }
-.hero::after {                      /* Tone Down */
+.hero::after {                    
     content: "";
     background: black;
     width: 100%;
@@ -486,6 +486,107 @@ section {
     top: 0;
     left: 0;
     opacity: .3;
+} */
+
+
+/*********************************************
+*** PAGE ANIMATION WITH GSAP 2 ***/
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.cover {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    object-fit: cover;
+    object-position: top;
+}
+
+nav {
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+    width: 40%;
+    height: 20vh;
+    color: #916356;
+
+    display: flex;
+    align-items: center;
+    top: 0;
+    left: 0;
+}
+
+.nav-closed {
+    position: absolute; 
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 20vh;
+}
+
+.nav-closed ul {
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.nav-open {
+    position: absolute;
+    top: 20vh;
+    width: 100%;
+    height: 80vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.clothes {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.clothes h2 {
+    font-size: 50px;
+}
+.clothes ul {
+    list-style: none;
+}
+.clothes ul li {
+    margin-bottom: 10px;
+}
+.clothes ul li a {
+    text-decoration: none;
+    color: #916356;
+}
+
+.nav-images {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.nav-images img {
+    height: 250px;
 }
 
 
