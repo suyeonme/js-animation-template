@@ -297,12 +297,32 @@
 ///////////////////////////////////////////
 // BLENGDING IMAGE ANIMATION 
 // TweenMax, Hover-effect, Three js
-const blendingImage = (function(){
+/* const blendingImage = (function(){
     new hoverEffect({
-        parent: document.querySelector('.distortion'),
+        parent: document.querySelector('.distortion'),     
         intensity: 0.1,
-        image1: '../img/blending-1.jpg',
-        image2: '../img/blending-2.jpg',
-        displacementImage: '../img/blending/blender.png'
+        image1: '../img/blending/blending-1.jpg',
+        image2: '../img/blending/blending-2.jpg',
+        displacementImage: '../img/blending/blender.png'        // Blending Image
+    });
+})(); */
+
+
+///////////////////////////////////////////
+// BUBBLE NAVIGATION
+const bubbleNav = (function(){
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const links = document.querySelectorAll('.nav-links li');
+
+    hamburger.addEventListener('click', () => {
+
+        // Bubble nav
+        navLinks.classList.toggle('open');
+
+        // Fade li items
+        links.forEach(link => {
+            link.classList.toggle('fade');
+        });
     });
 })();
