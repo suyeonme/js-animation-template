@@ -256,6 +256,7 @@
     const headline = document.querySelector('.headline');
 
     const timeline = new TimelineMax();
+    
     timeline
         .fromTo(hero, 1, { height: '0%' }, { height: '80%', ease: Power2.easeInOut })
         .fromTo(hero, 1.2, { width: '100%' }, { width: '80%', ease: Power2.easeInOut })
@@ -268,11 +269,12 @@
 
 ///////////////////////////////////////////
 // PAGE ANIMATION WITH GSAP 2
-const navAnimation = (function() {
+/* const navAnimation = (function() {
     const navBtn = document.querySelector('.nav-btn');
     const cover = document.querySelector('.cover');
     const nav = document.querySelector('nav');
     const navOpen = document.querySelector('.nav-open');
+
     const timeline = new TimelineMax( { paused: true, reversed: true });
 
     // Animate 
@@ -289,4 +291,18 @@ const navAnimation = (function() {
     const toggleTween = tween => {
         tween.reversed() ? tween.play() : tween.reverse();
     };
+})(); */
+
+
+///////////////////////////////////////////
+// BLENGDING IMAGE ANIMATION 
+// TweenMax, Hover-effect, Three js
+const blendingImage = (function(){
+    new hoverEffect({
+        parent: document.querySelector('.distortion'),
+        intensity: 0.1,
+        image1: '../img/blending-1.jpg',
+        image2: '../img/blending-2.jpg',
+        displacementImage: '../img/blending/blender.png'
+    });
 })();

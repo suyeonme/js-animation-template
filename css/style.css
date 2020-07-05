@@ -472,7 +472,7 @@ section {
     position: absolute;
     top: 70%;
     left: 10%;
-    transform: translate(-15%, -70%); // prevent absolute position to overflow
+    transform: translate(-15%, -70%); 
     z-index:3;
     font-size: 3.5rem;
     color: white;
@@ -491,11 +491,11 @@ section {
 
 /*********************************************
 *** PAGE ANIMATION WITH GSAP 2 ***/
-html,
+/* html,
 body {
     width: 100%;
     height: 100%;
-    background-color: black;
+    background-color: #e8ab28;
 }
 
 header {
@@ -516,16 +516,13 @@ header {
 
 nav {
     position: absolute;
-    z-index: 1;
-    background-color: white;
-    width: 40%;
-    height: 20vh;
-    color: #916356;
-
-    display: flex;
-    align-items: center;
     top: 0;
     left: 0;
+    z-index: 1;
+    width: 40%;
+    height: 20vh;
+    background-color: white;
+    color: #916356;
 }
 
 .nav-closed {
@@ -550,11 +547,11 @@ nav {
     top: 20vh;
     width: 100%;
     height: 80vh;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+
     opacity: 0;
     pointer-events: none;
 }
@@ -587,8 +584,34 @@ nav {
 }
 .nav-images img {
     height: 250px;
+} */
+
+
+/*********************************************
+*** BLENDING IMAGE ON HOVER ***/
+.landing {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    height: 100vh;
 }
 
+.distortion {
+    width: 100%;
+    height: auto;
+}
+
+.intro {
+    align-self: center;
+}
+.intro h1 {
+    font-size: 50px;
+}
+
+.intro p {
+    font-size: 25px;
+}
 
 
 
