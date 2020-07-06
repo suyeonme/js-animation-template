@@ -328,7 +328,10 @@
 })(); */
 
 
-const pageAnimation = (function(){
+
+///////////////////////////////////////////
+// GSAP ANIMATION 3
+/* const pageAnimation = (function(){
     const section = document.querySelector('section');
     const landing = document.querySelector('.landing');
     const image = document.querySelector('.image-container');
@@ -346,8 +349,53 @@ const pageAnimation = (function(){
         .to(image, 1, {width: '40%', ease: Power2.easeInOut}, '-=.8')
         .fromTo(nav, 1, {opacity: 0, y: '50%'}, {opacity: 1, y: '0%'}, '-=.7')
         .to(logo, .5, {fontSize: '2rem', ease: Power2.easeInOut}, '-=.5')
-})(); 
+})();  */
 
 
+
+///////////////////////////////////////////
+// SCROLL MAGIC & GSAP ANIMATION 
+const scrollMoveIcon = (function(){
+
+    const flightPath = {
+        curviness: 1.25,
+        autoRotate: true,
+        values: [
+            { x: 100, y: -20 },
+            { x: 300, y: 10 },
+            { x: 500, y: 100 },
+            { x: 750, y: -100 },
+            { x: 350, y: -50 },
+            { x: 600, y: 100 },
+            { x: 800, y: 0 },
+            { x: window.innerWidth, y: -250 }
+        ]
+    };
+
+    // TweenMax
+    const tween = new TimelineMax();
+
+    tween.add(
+        TweenMax.to('.plane', 1, {
+            bezier: flightPath,
+            ease: Power1.easeInOut
+        })
+    );
+
+    // ScrollMagic
+    const controller = new ScrollMagic.Controller();
+    
+    const scene = new ScrollMagic.Scene({
+        triggerElement: '.animation',
+        duration: 5000,
+        triggerHook: 0
+    })
+    .setTween(tween)
+    .setPin('.animation')
+    .addIndicators()
+    .addTo(controller);
+
+
+})();
 
 
