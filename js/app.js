@@ -310,7 +310,7 @@
 
 ///////////////////////////////////////////
 // BUBBLE NAVIGATION
-const bubbleNav = (function(){
+/* const bubbleNav = (function(){
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     const links = document.querySelectorAll('.nav-links li');
@@ -325,4 +325,29 @@ const bubbleNav = (function(){
             link.classList.toggle('fade');
         });
     });
-})();
+})(); */
+
+
+const pageAnimation = (function(){
+    const section = document.querySelector('section');
+    const landing = document.querySelector('.landing');
+    const image = document.querySelector('.image-container');
+    const blackBox = document.querySelector('.blackBox');
+    const logo = document.querySelector('.logo');
+    const nav = document.querySelector('nav');
+
+    const timeline = new TimelineMax( { delay: '.5' });
+
+    timeline
+        .fromTo(section, 1, { width: '100%', ease: Power2.easeOut }, { width: '70%', ease: Power2.easeInOut })
+        .fromTo(blackBox, 1.5, {opacity: '0', x: '-300'}, {opacity: 1, x: '500'})
+        .to(blackBox, 1, {opacity: '0', ease: Power2.easeOut}, '-=1')
+        .fromTo(landing, 1, {opacity: '0', y: '50%', ease: Power2.easeOut}, {opacity: '1', y: '-50%', ease: Power2.easeOut}, '-=1')
+        .to(image, 1, {width: '40%', ease: Power2.easeInOut}, '-=.8')
+        .fromTo(nav, 1, {opacity: 0, y: '50%'}, {opacity: 1, y: '0%'}, '-=.7')
+        .to(logo, .5, {fontSize: '2rem', ease: Power2.easeInOut}, '-=.5')
+})(); 
+
+
+
+
