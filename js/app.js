@@ -355,7 +355,7 @@
 
 ///////////////////////////////////////////
 // SCROLL MAGIC & GSAP ANIMATION 
-const scrollMoveIcon = (function(){
+/* const scrollMoveIcon = (function(){
 
     const flightPath = {
         curviness: 1.25,
@@ -394,8 +394,36 @@ const scrollMoveIcon = (function(){
     .setPin('.animation')
     .addIndicators()
     .addTo(controller);
-
-
 })();
 
+ */
 
+
+
+///////////////////////////////////////////
+// SCROLL MAGIC IMAGE REVEAL
+const sections = Array.from(document.querySelectorAll('.section'));
+
+sections.forEach(section => {
+    const imageContainer = section.querySelector('.image-box');
+    const text = section.querySelector('.textBox');
+    const image = section.querySelector('.image-box img');
+
+    const controller = new ScrollMagic.Controller();
+    const tween = new TimelineMax();
+
+    tween
+    //.fromTo(section, .7, { opacity: 0 }, { opacity: 1, ease: Power2.easeInOut })
+    .fromTo(imageContainer, .5, { width: '0' }, { width: '100%', ease: Power2.easeInOut })
+    .fromTo(image, .5, { width: '0' }, { width: '100%', ease: Power2.easeInOut}, '-=.3')
+    .fromTo(text, .5, { opacity: 0 }, { opacity: 1, ease: Power2.easeInOut })
+
+
+    const sectionScene = new ScrollMagic.Scene({
+        triggerElement: section,
+        triggerHook: 0.5
+    })
+    .setTween(tween)
+    .addIndicators()
+    .addTo(controller)
+});
