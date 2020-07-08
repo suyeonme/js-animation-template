@@ -402,7 +402,7 @@
 
 ///////////////////////////////////////////
 // SCROLL MAGIC IMAGE REVEAL
-const sections = Array.from(document.querySelectorAll('.section'));
+/* const sections = Array.from(document.querySelectorAll('.section'));
 
 sections.forEach(section => {
     const imageContainer = section.querySelector('.image-box');
@@ -426,4 +426,26 @@ sections.forEach(section => {
     .setTween(tween)
     .addIndicators()
     .addTo(controller)
-});
+}); */
+
+
+
+///////////////////////////////////////////
+// GSAP 3 TEXT REVEAL
+const gsap3 = (function(){
+    //gsap.from('.content', { opacity: 0, duration: 1, y: -50, ease: 'elastic(1, 0.3)' })
+    // Prevent creating scroll bar (x or y) -> Use backgroundPosition: '200px 0'; (bg-image)
+
+    const rule = CSSRulePlugin.getRule('span::after');
+    const tl = gsap.timeline({ defaults: {duration: 1 }});
+    
+    tl
+    .from('.anim1', { opacity: 0, y: -50, stagger: 0.6 })
+    .to(rule, { cssRule: { scaleY: 0}, duration: 1.8 }, '-=2')
+    .from('.img-container', { opacity: 0, y: 30 , duration: 1, delay: 0.5 }, '-=1.5')
+
+    // Toggle
+    document.querySelector('#cta').addEventListener('click', () => {
+        tl.reversed() ? tl.play() : tl.reverse();
+    });
+})();
