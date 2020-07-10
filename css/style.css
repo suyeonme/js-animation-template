@@ -917,7 +917,7 @@ header h1 {
 
 /**********************************
 ***** GSAP 3 TEXT REVEAL *****/
-.container {
+/* .container {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -953,7 +953,7 @@ span::after {
     height: 100%;
     z-index: 1;
     background-color: #fff;
-    transform-origin: 100% 0; /* Left to right or top to bottom */
+    transform-origin: 100% 0; 
 }
 
 a {
@@ -963,9 +963,74 @@ a {
     background-color: orange;
     padding: .5rem 1rem ;
     margin-top: 3rem;
+} */
+
+
+/**********************************
+***** Parallax Page *****/
+header {
+    width: 100%;
+    height: 100vh;
+    color: white;
+    background-color: #ffa931;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
 }
 
+.about {
+    height: 300vh;
+    display: flex;
+}
 
+.about-title {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    margin: 0 !important;
+}
+
+.about-pages {
+    width: 50%;
+}
+
+.about-pages div {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.about-pages div > p {
+    width: 80%;
+    line-height: 30px;
+    font-size: 18px;
+}
+
+.about-pages div:nth-child(1) {
+    background-color: #f9d56e;
+}
+.about-pages div:nth-child(2) {
+    background-color: #fa26a0;
+}
+.about-pages div:nth-child(3) {
+    background-color: #c4fb6d;
+}
+
+footer {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    background-color: #ffa931;
+}
 
 
 

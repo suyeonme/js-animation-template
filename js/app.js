@@ -432,7 +432,7 @@ sections.forEach(section => {
 
 ///////////////////////////////////////////
 // GSAP 3 TEXT REVEAL
-const gsap3 = (function(){
+/* const gsap3 = (function(){
     //gsap.from('.content', { opacity: 0, duration: 1, y: -50, ease: 'elastic(1, 0.3)' })
     // Prevent creating scroll bar (x or y) -> Use backgroundPosition: '200px 0'; (bg-image)
 
@@ -448,4 +448,22 @@ const gsap3 = (function(){
     document.querySelector('#cta').addEventListener('click', () => {
         tl.reversed() ? tl.play() : tl.reverse();
     });
-})();
+})(); */
+
+
+///////////////////////////////////////////
+// Parallax Page with scrollMagic
+const parallaxPage = (function() {
+    const aboutTitle = document.querySelector('.about-title');
+    const controller = new ScrollMagic.Controller();
+
+    const scene = new ScrollMagic.Scene({
+        triggerElement: aboutTitle,
+        triggerHook: 0,
+        duration: '200%'
+    })
+    .setPin(aboutTitle)
+    .addIndicators()
+    .addTo(controller)
+})();   
+
