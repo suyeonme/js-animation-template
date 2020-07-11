@@ -968,7 +968,7 @@ a {
 
 /**********************************
 ***** Parallax Page *****/
-header {
+/* header {
     width: 100%;
     height: 100vh;
     color: white;
@@ -1031,9 +1031,66 @@ footer {
     font-size: 2.5rem;
     background-color: #ffa931;
 }
+ */
 
 
 
+/**********************************
+***** NAVBAR ANIMATION ON PAGE SCROLL *****/
+header {
+    width: 100%;
+    height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1496747611176-843222e1e57c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60');
+    background-size: cover;
+}
+
+nav ul {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    list-style: none;
+    background-color: white;
+}
+nav a {
+    color: black;
+    text-decoration: none;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-bottom: 2px solid #f6ab6c;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: all .5s ease;
+}
+nav a.active::after {
+    transform: translateX(0);
+}
+nav li {
+    overflow: hidden;
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#one { background-color: #f6ab6c; }
+#two { background-color: #d4b5b0; }
+#three { background-color: #679b9b; }
 
 
 

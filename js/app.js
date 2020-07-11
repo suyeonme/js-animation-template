@@ -453,7 +453,7 @@ sections.forEach(section => {
 
 ///////////////////////////////////////////
 // Parallax Page with scrollMagic
-const parallaxPage = (function() {
+/* const parallaxPage = (function() {
     const aboutTitle = document.querySelector('.about-title');
     const controller = new ScrollMagic.Controller();
 
@@ -465,5 +465,25 @@ const parallaxPage = (function() {
     .setPin(aboutTitle)
     .addIndicators()
     .addTo(controller)
-})();   
+})(); */   
+
+
+///////////////////////////////////////////
+// NAVBAR ANIMATION ON PAGE SCROLL
+const navScroll = (function() {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav a');
+
+    sections.forEach(section => {
+        section.addEventListener('mouseenter', () => {
+            const id = section.getAttribute('id');
+            const activeNav = document.querySelector(`a[href="#${id}"]`);
+
+            // Clear nav links
+            navLinks.forEach(link => link.classList.remove('active'));
+            // Add animation
+            activeNav.classList.add('active');
+        });
+    });
+})();
 
