@@ -1037,7 +1037,7 @@ footer {
 
 /**********************************
 ***** NAVBAR ANIMATION ON PAGE SCROLL *****/
-header {
+/* header {
     width: 100%;
     height: 100vh;
     background-image: url('https://images.unsplash.com/photo-1496747611176-843222e1e57c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60');
@@ -1071,7 +1071,7 @@ nav a::after {
     top: 0;
     left: 0;
     transform: translateX(-100%);
-    transition: all .5s ease;
+    transition: all .3s ease;
 }
 nav a.active::after {
     transform: translateX(0);
@@ -1090,9 +1090,52 @@ section {
 
 #one { background-color: #f6ab6c; }
 #two { background-color: #d4b5b0; }
-#three { background-color: #679b9b; }
+#three { background-color: #679b9b; } */
 
 
+/**********************************
+***** CHANGE BACKGROUND COLOR ON SCROLL *****/
+body { background-color: 'white'; }
+
+header {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.intro-text h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+.intro-text p {
+    font-size: 1.5rem;
+}
+
+.page {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all .7s ease;
+    padding: 5rem 0;
+}
+.page h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+.page p {
+    margin-bottom: 3rem;
+}
+
+section { transition: all .7s ease; }
+section.scrolled-0 { background-color: #99b898; }
+section.scrolled-1 { background-color: #d4b5b0; }
+section.scrolled-2 { background-color: #fbd46d; }
 
 
 /* Helper class */

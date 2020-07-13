@@ -465,12 +465,12 @@ sections.forEach(section => {
     .setPin(aboutTitle)
     .addIndicators()
     .addTo(controller)
-})(); */   
+})(); */
 
 
 ///////////////////////////////////////////
 // NAVBAR ANIMATION ON PAGE SCROLL
-const navScroll = (function() {
+/* const navScroll = (function() {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('nav a');
 
@@ -485,5 +485,24 @@ const navScroll = (function() {
             activeNav.classList.add('active');
         });
     });
-})();
+})(); */
 
+
+
+///////////////////////////////////////////
+// CHANGE BACKGROUND COLOR ON SCROLL
+const changeBg = (function () {
+    const section = document.querySelector('section');
+    const background = document.querySelectorAll('.page');
+    const controller = new ScrollMagic.Controller();
+
+    background.forEach((page, index) => {
+        const scene = new ScrollMagic.Scene({
+                triggerElement: page,
+                offset: 50
+            })
+            .setClassToggle(section, `scrolled-${index}`)
+            .addIndicators()
+            .addTo(controller)
+    });
+})();
