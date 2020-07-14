@@ -491,7 +491,7 @@ sections.forEach(section => {
 
 ///////////////////////////////////////////
 // CHANGE BACKGROUND COLOR ON SCROLL
-const changeBg = (function () {
+/* const changeBg = (function () {
     const section = document.querySelector('section');
     const background = document.querySelectorAll('.page');
     const controller = new ScrollMagic.Controller();
@@ -505,4 +505,14 @@ const changeBg = (function () {
             .addIndicators()
             .addTo(controller)
     });
-})();
+})(); */
+
+///////////////////////////////////////////
+// TEXT REAVEL ANIMATION
+const  paths = document.querySelectorAll("#logo path");
+
+paths.forEach(function(path){
+    path.style.strokeDasharray = path.getTotalLength()+ 'px';
+    path.style.strokeDashoffset = path.getTotalLength() + 'px';
+    path.style.animation = "anim 2s ease forwards";
+});
