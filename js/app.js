@@ -507,12 +507,45 @@ sections.forEach(section => {
     });
 })(); */
 
+
 ///////////////////////////////////////////
 // TEXT REAVEL ANIMATION
-const  paths = document.querySelectorAll("#logo path");
+/* const revealText = () => {
+    const  paths = document.querySelectorAll("#logo path");
+    
+    paths.forEach(function(path){
+        path.style.strokeDasharray = path.getTotalLength()+ 'px';
+        path.style.strokeDashoffset = path.getTotalLength() + 'px';
+        path.style.animation = "anim 2s ease forwards";
+    });
+};
 
-paths.forEach(function(path){
-    path.style.strokeDasharray = path.getTotalLength()+ 'px';
-    path.style.strokeDashoffset = path.getTotalLength() + 'px';
-    path.style.animation = "anim 2s ease forwards";
-});
+revealText(); */
+
+
+///////////////////////////////////////////
+// TEXT TYPING EFFECT 
+const textTyping = () =>  {
+    const type = document.querySelector('.typing');
+    const texts = ['website', 'application', 'soup'];
+    let text = 0;
+    let index = 0;
+    let currentText = '';
+    let letter = '';
+    
+    (function typing() {
+        if (text === texts.length) text = 0;
+        currentText = texts[text];
+        letter = currentText.slice(0, ++index);
+        type.text = letter;
+    
+        if (letter.length === currentText.length) {
+            text++;
+            index = 0;
+        };
+    
+        setTimeout(typing, 400);
+    })();
+};
+
+textTyping();
