@@ -525,7 +525,7 @@ revealText(); */
 
 ///////////////////////////////////////////
 // TEXT TYPING EFFECT 
-const textTyping = () =>  {
+/* const textTyping = () =>  {
     const type = document.querySelector('.typing');
     const texts = ['website', 'application', 'soup'];
     let text = 0;
@@ -548,4 +548,34 @@ const textTyping = () =>  {
     })();
 };
 
-textTyping();
+textTyping(); */
+
+
+///////////////////////////////////////////
+// PAGE TRANSITION
+Barba.Pjax.start();
+
+var FadeTransition = Barba.BaseTransition.extend({
+    start: function() {
+
+    Promise
+    .all([this.newContainerLoading, this.fadeOut()])
+    .then(this.fadeIn.bind(this));
+    },
+    fadeOut: function() {},
+
+    fadeIn: function() {
+        this.newContainer.classList.add('slide-in');
+
+        var that = this;
+
+        this.newContainer.addEventListener('animationend', () => {
+            that.newContainer.classList.remove('slide-in');
+            that.done();
+        });
+    }
+});
+
+Barba.Pjax.getTransition = function() {
+    return FadeTransition;
+};
