@@ -1219,7 +1219,7 @@ section.scrolled-2 { background-color: #fbd46d; } */
 
 /**********************************
 ***** PAGE TRANSITION *****/
-body { overflow: hidden; }
+/* body { overflow: hidden; }
 
 .page1,
 .page2 {
@@ -1254,5 +1254,45 @@ a {
     to {
         transform: translateX(0);
     }
+} */
+
+
+/**********************************
+***** IMAGE SLIDER  *****/
+.carousel-container {
+    width: 55%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
 }
 
+.carousel-slide {
+    display: flex;
+    width: 100%;
+    height: 400px;
+}
+
+#prevBtn,
+#nextBtn {
+    color: white;
+    opacity: 0.7;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    font-size: 30px;
+    z-index: 10;
+    transform: translateY(-50%);
+}
+
+#prevBtn { left: 5% }
+#nextBtn { right: 5% }
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+.title { margin-bottom: 30px; }

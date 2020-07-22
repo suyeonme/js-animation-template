@@ -553,7 +553,7 @@ textTyping(); */
 
 ///////////////////////////////////////////
 // PAGE TRANSITION
-Barba.Pjax.start();
+/* Barba.Pjax.start();
 
 var FadeTransition = Barba.BaseTransition.extend({
     start: function() {
@@ -578,4 +578,55 @@ var FadeTransition = Barba.BaseTransition.extend({
 
 Barba.Pjax.getTransition = function() {
     return FadeTransition;
+}; */
+
+
+///////////////////////////////////////////
+// IMAGE SLIDER
+const carousel = () => {
+    const carouselSlide = document.querySelector('.carousel-slide');
+    const carouselImages = document.querySelectorAll('.carousel-slide img');
+    const prevBtn = document.querySelector('#prevBtn');
+    const nextBtn = document.querySelector('#nextBtn');
+
+    let counter = 1;
+    const size = carouselImages[0].clientWidth;
+
+    carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+
+    // Button listener
+    nextBtn.addEventListener('click', () => {
+        // Fix bug when user click so fast
+        if (counter >= carouselImages.length - 1) return;
+
+        carouselSlide.style.transition = 'transform .4s ease-in-out';
+        counter++;
+        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+    });
+
+    prevBtn.addEventListener('click', () => {
+        // Fix bug when user click so fast
+        if (counter <= 0) return;
+
+        carouselSlide.style.transition = 'transform .4s ease-in-out';
+        counter--;
+        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+    });
+
+    // Loops Images
+    carouselSlide.addEventListener('transitionend', () => {
+        if (carouselImages[counter].id === 'lastClone') {
+            carouselSlide.style.transition = 'none';
+            counter = carouselImages.length - 2;
+            carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+        }
+        if (carouselImages[counter].id === 'firstClone') {
+            carouselSlide.style.transition = 'none';
+            counter = carouselImages.length - counter;
+            carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+        }
+    });
+
 };
+
+carousel();
