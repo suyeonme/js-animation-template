@@ -583,34 +583,37 @@ Barba.Pjax.getTransition = function() {
 
 ///////////////////////////////////////////
 // IMAGE SLIDER
-const carousel = () => {
+/* const carousel = () => {
     const carouselSlide = document.querySelector('.carousel-slide');
     const carouselImages = document.querySelectorAll('.carousel-slide img');
     const prevBtn = document.querySelector('#prevBtn');
     const nextBtn = document.querySelector('#nextBtn');
 
     let counter = 1;
-    const size = carouselImages[0].clientWidth;
+    const size = carouselImages[0].getBoundingClientRect().width; // It returns an exact value !== clientWidth rounds the width to the nearest pixel
+
+    const moveSlide = () => {
+        carouselSlide.style.transition = 'transform .4s ease-in-out';
+        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+    };
 
     carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-
+    
     // Button listener
     nextBtn.addEventListener('click', () => {
         // Fix bug when user click so fast
         if (counter >= carouselImages.length - 1) return;
 
-        carouselSlide.style.transition = 'transform .4s ease-in-out';
         counter++;
-        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+        moveSlide();
     });
 
     prevBtn.addEventListener('click', () => {
         // Fix bug when user click so fast
         if (counter <= 0) return;
 
-        carouselSlide.style.transition = 'transform .4s ease-in-out';
         counter--;
-        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+        moveSlide();
     });
 
     // Loops Images
@@ -627,6 +630,68 @@ const carousel = () => {
         }
     });
 
+    // Auto play slider 
+    const autoSlide = () => {
+        if (counter >= carouselImages.length - 1) return;
+        counter++;
+        moveSlide();
+    };
+
+    const timer = setInterval(autoSlide, 3000);
 };
 
-carousel();
+carousel(); */
+
+
+///////////////////////////////////////////
+// BARBA PAGE TRANSITION
+
+// GSAP animation
+function pageTransition() {
+    var tl = gsap.timeline();
+    const li = document.querySelectorAll('ul.transition li');
+    
+    tl.to(li, { duration: .5, scaleY: 1, transformOrigin: 'bottom left', stagger: .2 }) // stagger: run one by one (multiple items not at the same)
+    tl.to(li , { duration: .5, scaleY: 0, transformOrigin: 'bottom left', stagger: .1, delay: .1 });
+};
+
+function contentAnimation() {
+    var tl = gsap.timeline();
+
+    tl.from('.left', { duration: 1.5, translateY: 50, opacity: 0 })
+    tl.to('img', { clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)"}, "-=1.1");
+};
+
+function delay(n) {
+    n = n || 2000;
+
+    return new Promise(done => {
+        setTimeout(() => {
+            done();
+        }, n);
+    })
+};
+
+// Barba transition
+barba.init({
+    sync: true,
+    
+    transitions: [{
+        async leave(data) {
+            var done = this.async();
+            pageTransition(); 
+            await delay(1500);
+            done();
+        },
+        async enter(data) {
+            contentAnimation();
+        },
+        async once(data) {
+            contentAnimation();
+        }
+    }]
+})
+
+
+
+
