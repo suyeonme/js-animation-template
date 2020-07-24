@@ -552,7 +552,7 @@ textTyping(); */
 
 
 ///////////////////////////////////////////
-// PAGE TRANSITION
+// PAGE TRANSITION with Braba js
 /* Barba.Pjax.start();
 
 var FadeTransition = Barba.BaseTransition.extend({
@@ -644,10 +644,9 @@ carousel(); */
 
 
 ///////////////////////////////////////////
-// BARBA PAGE TRANSITION
-
+// BARBA PAGE TRANSITION with JSAP
 // GSAP animation
-function pageTransition() {
+/* function pageTransition() {
     var tl = gsap.timeline();
     const li = document.querySelectorAll('ul.transition li');
     
@@ -690,8 +689,11 @@ barba.init({
             contentAnimation();
         }
     }]
-})
+});
+ */
 
 
-
+///////////////////////////////////////////
+// SWUP PAGE TRANSITION
+const swup = new Swup();
 
