@@ -695,5 +695,21 @@ barba.init({
 
 ///////////////////////////////////////////
 // SWUP PAGE TRANSITION
-const swup = new Swup();
+//const swup = new Swup();
 
+
+///////////////////////////////////////////
+//  PAGE TRANSITION WITH SCROLLTRIGGER
+// Single elements
+const tl = gsap.timeline();
+
+tl
+.from('img', { x: 200, opacity: 0, duration: 1.5 } )
+.from('.content', { y: 300, opacity: 0, duration: 1 }, '-=1');
+
+ScrollTrigger.create({
+    trigger: ".dark",
+    animation: tl,
+    start: "center bottom",
+    toggleActions: "play pause resume reset" // option
+});
