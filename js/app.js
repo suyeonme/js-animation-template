@@ -700,16 +700,57 @@ barba.init({
 
 ///////////////////////////////////////////
 //  PAGE TRANSITION WITH SCROLLTRIGGER
-// Single elements
-const tl = gsap.timeline();
+/* const scrollTrigger = () => {
+    const tl = gsap.timeline();
+    
+    tl
+    .from('img', { x: 200, opacity: 0, duration: 1.5 } )
+    .from('.content', { y: 300, opacity: 0, duration: 1 }, '-=1');
+    
+    ScrollTrigger.create({
+        trigger: ".dark",
+        animation: tl,
+        start: "center bottom",
+        toggleActions: "play pause resume reset" // option
+    });
+};
+scrollTrigger(); */
 
-tl
-.from('img', { x: 200, opacity: 0, duration: 1.5 } )
-.from('.content', { y: 300, opacity: 0, duration: 1 }, '-=1');
 
-ScrollTrigger.create({
-    trigger: ".dark",
-    animation: tl,
-    start: "center bottom",
-    toggleActions: "play pause resume reset" // option
-});
+///////////////////////////////////////////
+//  SVG TEXT PATH ANIMATION
+const textPathAnim = () => {
+    const textPath = document.querySelector('#text-path');
+    const titles = document.querySelectorAll('.anim');
+    
+    // Animate textPath
+    const updateTextPathOffset = offset => {
+        textPath.setAttribute('startOffset', offset);
+    };
+    
+    const onScroll = () => {
+        requestAnimationFrame(() => {                                   // 60 times per second
+            updateTextPathOffset(window.scrollY * .8);
+        });
+    };
+    
+    window.addEventListener('scroll', onScroll);
+    
+    // Animate title
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting == true) {
+                entry.target.classList.add('animate');
+            } else {
+                entry.target.classList.remove('animate');
+            }
+        })
+    });
+    
+    titles.forEach(title => {
+        observer.observe(title);
+    });
+};
+
+textPathAnim();
+
