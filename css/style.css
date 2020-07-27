@@ -1528,7 +1528,7 @@ p {
 
 /**********************************
 ***** SVG TEXT PATH ANIMATION *****/
-body {
+/* body {
     height: 400vh;
     margin: 0;
 }
@@ -1582,5 +1582,99 @@ h1 {
         opacity: 1;
         transform: translateX(0);
     }
+} */
+
+
+
+/**********************************
+***** 3D CUBE EFFECT WITH SWIPER JS *****/
+html, body {
+    position: relative;
+    height: 100%;
+    background: black;
 }
 
+body {
+    margin: 0;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    margin-left: -50%;
+}
+
+.swiper-slide {
+    box-sizing: border-box;
+    padding: 8em 3em;
+    color: white;
+    background-size: cover !important;
+}
+.swiper-slide h1 {
+    font-size: 5em;
+    line-height: 1em;
+}
+.swiper-slide h1::before {
+    content: ' ';
+    position: absolute;
+    top: 1em;
+    width: 50%;
+    height: 40%;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+.swiper-slide p {
+    font-size: 1.2em;
+    line-height: 1.5em;
+    margin-top: 7em;
+}
+
+.slide1 {
+    background-image: linear-gradient(rgba(0,0,0, .25), rgba(0,0,0,.25)), url('https://images.unsplash.com/photo-1499380848949-2960e980ed02?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60');
+}
+.slide1 h1::before {
+    border-left: 1px solid #fff;
+    right: 0;
+}
+
+.slide2 {
+    background-image: url('https://images.unsplash.com/photo-1550147760-44c9966d6bc7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60');
+}
+.slide2 h1::before {
+    border-right: 1px solid #fff;
+    left: 0;
+}
+.slide2 h1::after {
+    content: ' ';
+    position: absolute;
+    top: 1em;
+    width: 20%;
+    height: 40%;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    border-left: 1px solid #fff;
+    right: 0;
+}
+
+.slide3 {
+    background-image: linear-gradient(rgba(0,0,0, .25), rgba(0,0,0,.25)), url('https://images.unsplash.com/photo-1559962219-f52ccd86944e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60');
+}
+.slide3 h1::before {
+    border-right: 1px solid #fff;
+    left: 0;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    top: 85%;
+    outline: none;
+}
+
+.swiper-button-next {
+    right: 3rem;
+}
+.swiper-button-prev {
+    left: 3rem;
+}
