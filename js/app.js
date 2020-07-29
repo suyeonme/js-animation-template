@@ -759,7 +759,7 @@ textPathAnim();
 
 ///////////////////////////////////////////
 //  3D CUBE EFFECT WITH SWIPER JS
-var swiper = new Swiper('.swiper-container', {
+/* var swiper = new Swiper('.swiper-container', {
     effect: 'cube',
     grabCursor: true,
     cubeEffect: {
@@ -772,4 +772,26 @@ var swiper = new Swiper('.swiper-container', {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     }
+}); */
+
+
+
+///////////////////////////////////////////
+//  INTERSECTION OBSERVER 
+const targets = document.querySelectorAll('.animated');
+
+const animate = entries =>{
+    entries.forEach(entry => {
+        if(entry.intersectionRatio > 0) {
+            entry.target.style.animation = `slide-up 2s ${entry.target.dataset.delay} ease-in-out forwards`;
+        } else {
+            entry.target.style.animation = `none`;
+        }
+    });
+};
+
+const observer = new IntersectionObserver(animate);
+
+targets.forEach(target => {
+    observer.observe(target);
 });

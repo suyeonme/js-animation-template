@@ -1,22 +1,21 @@
 *,
 *::before,
 *::after {
-  padding: 0;
-  margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 /****************************
@@ -45,6 +44,7 @@ a {
 .img-container img:hover {
     transform: scale(1.2);
 } */
+
 /* Modal */
 /* .modal {
     background-color: rgba(0, 0, 0, .8);
@@ -84,6 +84,9 @@ a {
     transform: translate(-50%, -5%);
 }
  */
+
+
+
 /****************************
 ******* MOUSE CURSOR  *******/
 /* .mouse-cursor {
@@ -143,6 +146,7 @@ h1 {
 .front-cover img {
     width: 100%;
 } */
+
 /* cursor hover on link */
 /* .link-grow {
     transform: scale(1.5);
@@ -151,6 +155,8 @@ h1 {
 .hovered-link {
     color: white;
 } */
+
+
 /****************************
 ******* FANCY TEXT  *******/
 /* .text-fade {
@@ -177,6 +183,9 @@ span.fade-in {
     opacity: 1;
     transform: translateY(0);
 } */
+
+
+
 /****************************
 ****** NAV ANIMATION ******/
 /* header {
@@ -241,6 +250,8 @@ nav a {
 .contact {
     background: linear-gradient(to right top, #e53935, #e35d5b);
 } */
+
+
 /**********************************
 ****** FADE IN HEADER IMAGE ******/
 /* .fadein {
@@ -283,6 +294,9 @@ header {
     margin-bottom: 2rem;
     font-size: 3rem;
 } */
+
+
+
 /**********************************
 ********* IMAGE GALLERY  *********/
 /* .gallery-section {
@@ -294,15 +308,18 @@ header {
     flex-flow: row nowrap;
     overflow-x: auto;
     overflow-y: visible; */
-/* -ms-overflow-style: none;   Internet Explorer 10+ */
-/* scrollbar-width: none;      Firefox 
+
+    /* -ms-overflow-style: none;   Internet Explorer 10+ */
+    /* scrollbar-width: none;      Firefox 
 }
 */
+
 /*
 .gallery-section::-webkit-scrollbar { 
     display: none;   Safari and Chrome 
 }
 */
+
 /* .container {
     display: flex;
     align-items: center;
@@ -329,6 +346,8 @@ header {
     width: 100%;
     height: 100%;
 } */
+
+
 /**********************************
 ****** AIRPOD VIDEO ANIMATION ******/
 /* .intro {
@@ -361,6 +380,9 @@ section h1 {
     padding-top: 350px;
     font-size: 3rem;
 } */
+
+
+
 /**********************************
 ****** FULL PAGE ANIMATION  ******/
 /* .chair {
@@ -405,6 +427,8 @@ section h1 {
 .description p {
     margin: 50px 0;
 } */
+
+
 /***************************************
 ****** PAGE ANIMATION WITH GSAP 1 ******/
 /* nav {
@@ -471,6 +495,8 @@ section {
     left: 0;
     opacity: .3;
 } */
+
+
 /*********************************************
 *** PAGE ANIMATION WITH GSAP 2 ***/
 /* html,
@@ -567,6 +593,8 @@ nav {
 .nav-images img {
     height: 250px;
 } */
+
+
 /*********************************************
 *** BLENDING IMAGE ON HOVER ***/
 /* .landing {
@@ -591,6 +619,9 @@ nav {
 .intro p {
     font-size: 25px;
 } */
+
+
+
 /******************************
 *** BUBBLE NAVIGATION ***/
 /*
@@ -677,8 +708,8 @@ nav {
         flex-direction: column;
     }
 */
-/* li fade-in */
-/*
+    /* li fade-in */
+    /*
     .nav-links li {
         opacity: 0;
     }
@@ -686,7 +717,7 @@ nav {
         transition: all .5s ease .2s; /* .2s is delay 
     }
     */
-/*
+    /*
     .nav-links li:nth-child(2) {
         transition: all .5s ease .4s; 
     }    
@@ -701,6 +732,9 @@ nav {
     }
 }
 */
+
+
+
 /******************************
 ***** GSAP ANIMATION 3 *****/
 /* header {
@@ -791,6 +825,9 @@ section {
     background-color: black;
     pointer-events: none;
 } */
+
+
+
 /******************************
 ***** SCROLLMAGIC & GSAP *****/
 /* header,
@@ -818,6 +855,8 @@ header h1 {
     top: 50%;
     left: 0;
 } */
+
+
 /**********************************
 ***** SCROLL MAGIC IMAGE REVEAL *****/
 /* header {
@@ -882,6 +921,8 @@ header h1 {
     grid-column: 3/7;
     grid-row: 2/3;
 } */
+
+
 /**********************************
 ***** GSAP 3 TEXT REVEAL *****/
 /* .container {
@@ -931,6 +972,8 @@ a {
     padding: .5rem 1rem ;
     margin-top: 3rem;
 } */
+
+
 /**********************************
 ***** Parallax Page *****/
 /* header {
@@ -997,6 +1040,9 @@ footer {
     background-color: #ffa931;
 }
  */
+
+
+
 /**********************************
 ***** NAVBAR ANIMATION ON PAGE SCROLL *****/
 /* header {
@@ -1053,6 +1099,8 @@ section {
 #one { background-color: #f6ab6c; }
 #two { background-color: #d4b5b0; }
 #three { background-color: #679b9b; } */
+
+
 /**********************************
 ***** CHANGE BACKGROUND COLOR ON SCROLL *****/
 /* body { background-color: 'white'; }
@@ -1096,6 +1144,8 @@ section { transition: all .7s ease; }
 section.scrolled-0 { background-color: #99b898; }
 section.scrolled-1 { background-color: #d4b5b0; }
 section.scrolled-2 { background-color: #fbd46d; } */
+
+
 /**********************************
 ***** TEXT REAVEL ANIMATIONL *****/
 /* body {
@@ -1127,6 +1177,8 @@ section.scrolled-2 { background-color: #fbd46d; } */
     }
 }
  */
+
+
 /**********************************
 ***** TEXT TYPING EFFECT *****/
 /* section {
@@ -1171,6 +1223,8 @@ section.scrolled-2 { background-color: #fbd46d; } */
         opacity: 1;
     }
 } */
+
+
 /**********************************
 ***** PAGE TRANSITION *****/
 /* body { overflow: hidden; }
@@ -1209,6 +1263,8 @@ a {
         transform: translateX(0);
     }
 } */
+
+
 /**********************************
 ***** IMAGE SLIDER  *****/
 /* .carousel-container {
@@ -1248,6 +1304,8 @@ body {
     height: 100vh;
 }
 .title { margin-bottom: 30px; } */
+
+
 /**********************************
 ***** BARBA PAGE TRANSITION *****/
 /* body {
@@ -1341,6 +1399,8 @@ img {
         animation-fill-mode: initial;
     }
 } */
+
+
 /**********************************
 ***** SWUP PAGE TRANSITION*****/
 /* .container {
@@ -1409,6 +1469,9 @@ html.is-animating .transition-left {
 html.is-animating .transition-wipe {
     transform: scaleX(1);
 } */
+
+
+
 /**********************************
 ***** PAGE TRANSITION WITH SCROLL TRIGGER *****/
 /* body {
@@ -1461,6 +1524,8 @@ p {
     font-size: 2rem;
 }
  */
+
+
 /**********************************
 ***** SVG TEXT PATH ANIMATION *****/
 /* body {
@@ -1518,6 +1583,9 @@ h1 {
         transform: translateX(0);
     }
 } */
+
+
+
 /**********************************
 ***** 3D CUBE EFFECT WITH SWIPER JS *****/
 /* html, body {
@@ -1610,100 +1678,72 @@ body {
 .swiper-button-prev {
     left: 3rem;
 } */
+
+
 /**********************************
 ***** INTERSECTION OBSERVER *****/
 section {
-  height: 100vh;
-  background-color: #ffd36b;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+    height: 100vh;
+    background-color: #ffd36b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.anim__container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 70%;
-  position: relative;
-}
+.anim {
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        width: 70%;
+        position: relative;
+    }
 
-.anim__image {
-  width: 40%;
-  height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
+    &__image {
+        width: 40%;
+        height: auto;
+        object-fit: cover;
+    }
 
-.anim__text {
-  width: 40%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
+    &__text {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        h2 {
+            font-size: 2.3rem;
+            margin-bottom: 1rem;
+        }
+    }
 
-.anim__text h2 {
-  font-size: 2.3rem;
-  margin-bottom: 1rem;
-}
+    &__img { 
+        width: 100%;
+        height: 100%;
+    }
 
-.anim__img {
-  width: 100%;
-  height: 100%;
-}
-
-.anim__icon {
-  position: absolute;
-  right: 27%;
-  bottom: 0;
-  width: 12rem;
-  height: 12rem;
-  opacity: .5;
-}
-
-@-webkit-keyframes slide-up {
-  from {
-    opacity: 0;
-    -webkit-transform: translateY(150px);
-            transform: translateY(150px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
+    &__icon {
+        position: absolute;
+        right: 27%;
+        bottom: 0;
+        width: 12rem;
+        height: 12rem;
+        opacity: .5;
+    }
 }
 
 @keyframes slide-up {
-  from {
-    opacity: 0;
-    -webkit-transform: translateY(150px);
-            transform: translateY(150px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(150px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .animated {
-  opacity: 0;
+    opacity: 0;
 }
-/*# sourceMappingURL=style.css.map */
+
+
